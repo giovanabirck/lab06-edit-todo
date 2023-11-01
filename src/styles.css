@@ -1,0 +1,80 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  color: #151515;
+}
+
+.task {
+  margin-top: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
+  border: solid lightgray;
+  border-radius: 8px;
+  list-style-type: none;
+  height: 44px;
+}
+
+.task-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.left-side input {
+  margin-right: 1rem;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.right-side img {
+  cursor: pointer;
+  height: 32px;
+  align-self: center;
+  padding-left: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form input {
+  border: solid black;
+  border-radius: 8px;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 1rem;
+  width: 30rem;
+}
+
+.btn {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  align-self: center;
+  margin-top: 1rem;
+  width: 200px;
+  border: solid;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.task-details p {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+.task-details p input {
+  margin-left: 1rem;
+}
