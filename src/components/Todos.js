@@ -6,7 +6,9 @@ export default function Todos() {
   const [tasks, setTasks] = useState([]);
 
   function addTask(newTask) {
-    const updatedTasks = [...tasks, newTask];
+    const timestamp = new Date().toLocaleString();
+    const taskWithTimestamp = { ...newTask, timestamp };
+    const updatedTasks = [...tasks, taskWithTimestamp];
     setTasks(updatedTasks);
   }
 
@@ -21,8 +23,12 @@ export default function Todos() {
   function toggleTask(item) {
     const updatedTask = tasks.map(function (task) {
       if (task.id === item.id) {
-        task.done = !task.done;
-        return task;
+        const updatedTask = {
+          ...task,
+          done: !task.done,
+          completedTimestamp: task.done ? null : new Date().toLocaleString(),
+        };
+        return updatedTask;
       } else {
         return task;
       }
@@ -61,3 +67,4 @@ export default function Todos() {
     </div>
   );
 }
+
