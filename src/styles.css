@@ -23,8 +23,19 @@
   align-items: center;
 }
 
+.task_name {
+  font-size: 20px;
+  margin-left: 4em;
+}
+
 .left-side input {
   margin-right: 1rem;
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 100;
+  margin-left: 2em;
 }
 
 .right-side {
@@ -78,3 +89,4 @@
 .task-details p input {
   margin-left: 1rem;
 }
+
