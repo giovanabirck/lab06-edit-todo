@@ -13,12 +13,12 @@ export default function Todo(props) {
     })
   : null;
   const completedTime = completedTimestamp
-  ? new Date(completedTimestamp).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })
-  : null;
+    ? new Date(completedTimestamp).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      })
+    : null;
   const [editing, setEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(task.title || "");
 
