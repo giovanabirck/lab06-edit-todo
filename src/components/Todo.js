@@ -1,9 +1,22 @@
 import deleteIcon from "../icons/delete.png";
 import editIcon from "../icons/edit.svg";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Todo(props) {
-  const task = props.task;
+  const { task } = props;
+  const { timestamp, completedTimestamp } = task;
+  const timeOnly = new Date(timestamp).toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  const completedTime = completedTimestamp
+    ? new Date(completedTimestamp).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      })
+    : null;
   const [editing, setEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(task.title || "");
 
@@ -50,7 +63,11 @@ export default function Todo(props) {
           ) : (
             <p>{task.done === true ? <del>{task.title}</del> : task.title}</p>
           )}
-          <span>{task.artist}</span>
+          <span className="task_name">{task.artist}</span>
+          <p className="time">{`Started at ${timeOnly}`}</p>
+          {task.done && (
+            <p className="time">{`Completed at: ${completedTime}`}</p>
+          )}
         </div>
 
         <div className="right-side">
@@ -65,3 +82,4 @@ export default function Todo(props) {
     </li>
   );
 }
+
